@@ -23,6 +23,8 @@ environment:
 dependencies:
   font_awesome_flutter: ^9.1.0
   country_calling_code_picker: ^2.0.0
+  carousel_slider: ^4.0.0
+  scrollable_clean_calendar: ^0.5.2
   flutter:
     sdk: flutter
 

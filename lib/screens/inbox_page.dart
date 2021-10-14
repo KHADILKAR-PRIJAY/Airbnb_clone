@@ -133,6 +133,7 @@ Widget Messsages(BuildContext context) {
                 child: ListTile(
                   leading: CircleAvatar(
                       radius: 24,
+                      backgroundColor: Colors.grey,
                       backgroundImage:
                           AssetImage('assets/images/profile-placeholder.jpg')),
                   title: Text(

@@ -13,7 +13,7 @@ class LogIn extends StatefulWidget {
 }
 
 class _LogInState extends State<LogIn> {
-  Country? _selectedCountry;
+  late Country _selectedCountry;
 
   @override
   void initState() {
@@ -89,7 +89,7 @@ class _LogInState extends State<LogIn> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '${country!.callingCode} ${country!.name} (${country!.countryCode})',
+                              '${country.callingCode} ${country.name} (${country.countryCode})',
                               style: TextStyle(fontSize: 15),
                             ),
                             GestureDetector(
