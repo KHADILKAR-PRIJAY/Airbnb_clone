@@ -69,58 +69,56 @@ class _ExploreState extends State<Explore> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text('GETAWAYS NEAR YOU', style: label),
               ),
-              Container(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: smallImages.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context, SlideRightRoute(page: LookingFor()));
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              '${smallImages[index]['Image']}'),
-                                          fit: BoxFit.cover)),
-                                ),
-                                SizedBox(width: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '${smallImages[index]['label']}',
-                                      style: ThemeColorBold2,
-                                    ),
-                                    SizedBox(height: 2),
-                                    Text(
-                                      '6 hr drive',
-                                      style: TealColorRegular,
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: smallImages.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context, SlideRightRoute(page: LookingFor()));
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            '${smallImages[index]['Image']}'),
+                                        fit: BoxFit.cover)),
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    '${smallImages[index]['label']}',
+                                    style: ThemeColorBold2,
+                                  ),
+                                  SizedBox(height: 2),
+                                  Text(
+                                    '6 hr drive',
+                                    style: TealColorRegular,
+                                  )
+                                ],
+                              )
+                            ],
                           ),
-                          Divider(color: Colors.grey)
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                        ),
+                        Divider(color: Colors.grey)
+                      ],
+                    ),
+                  );
+                },
               ),
             ],
           ),

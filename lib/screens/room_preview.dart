@@ -4,6 +4,10 @@ import 'package:airbnb_clone/screens/room_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:scrollable_clean_calendar/scrollable_clean_calendar.dart';
+
+const TextStyle weekday =
+    TextStyle(color: Colors.grey, fontSize: 12, height: 4);
 
 const TextStyle label =
     TextStyle(color: KThemeColor, fontWeight: FontWeight.w600);
@@ -20,6 +24,7 @@ class _RoomPreviewState extends State<RoomPreview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -284,11 +289,97 @@ class _RoomPreviewState extends State<RoomPreview> {
             elevation: 0,
             insetPadding: EdgeInsets.all(0),
             child: Container(
-              color: Colors.white,
               width: double.infinity,
-              height: 400,
-              padding: EdgeInsets.fromLTRB(20, 50, 20, 20),
-              child: Text("You can make cool stuff!"),
+              height: 550,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(Icons.close)),
+                        //SizedBox(width: 125),
+                        Expanded(
+                            child:
+                                Center(child: Text('Anytime', style: label))),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text('Mon', style: weekday),
+                        Text('Tue', style: weekday),
+                        Text('Wed', style: weekday),
+                        Text('Thu', style: weekday),
+                        Text('Fri', style: weekday),
+                        Text('Sat', style: weekday),
+                        Text('Sun', style: weekday),
+                      ],
+                    ),
+                    Divider(color: Colors.grey),
+                    Expanded(
+                      child: ScrollableCleanCalendar(
+                        onRangeSelected: (firstDate, secondDate) {
+                          print('onRangeSelected first $firstDate');
+                          print('onRangeSelected second $secondDate');
+                        },
+                        onTapDate: (date) {
+                          print('onTap $date');
+                        },
+                        showDaysWeeks: false,
+                        rangeSelectedDateColor: KTealColor,
+                        monthLabelAlign: MainAxisAlignment.start,
+                        monthLabelStyle: TextStyle(
+                            color: KThemeColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.5),
+                        selectedDateColor: KThemeColor,
+                        minDate: DateTime.now(),
+                        maxDate: DateTime.now().add(
+                          Duration(days: 365),
+                        ),
+                        renderPostAndPreviousMonthDates: true,
+                      ),
+                    ),
+                    Divider(color: Colors.grey),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Clear",
+                              style: TextStyle(
+                                  decoration: TextDecoration.underline)),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: KThemeColor,
+                            ),
+                            height: 30,
+                            width: 80,
+                            child: Center(
+                                child: Text(
+                              "Save",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.2,
+                                  fontSize: 10),
+                            )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             )));
   }
 
