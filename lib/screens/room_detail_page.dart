@@ -1,10 +1,18 @@
 import 'package:airbnb_clone/data/data.dart';
 import 'package:airbnb_clone/screens/request_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../constants.dart';
+
+const TextStyle themeSemiBold =
+    TextStyle(color: KThemeColor, fontSize: 16, fontWeight: FontWeight.w500);
+const TextStyle themeSemiBold2 =
+    TextStyle(color: KThemeColor, fontSize: 14, fontWeight: FontWeight.w500);
+const TextStyle regularGrey = TextStyle(fontSize: 12, color: Colors.grey);
+const TextStyle regularTheme = TextStyle(fontSize: 12, color: KThemeColor);
 
 class RoomDetail extends StatefulWidget {
   @override
@@ -79,8 +87,13 @@ class _RoomDetailState extends State<RoomDetail> {
         leading: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Container(
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0.0, 1.0), //(x,y)
+                blurRadius: 3.0,
+              ),
+            ], shape: BoxShape.circle, color: Colors.white),
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
@@ -97,8 +110,13 @@ class _RoomDetailState extends State<RoomDetail> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Container(
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(0.0, 1.0), //(x,y)
+                  blurRadius: 3.0,
+                ),
+              ], shape: BoxShape.circle, color: Colors.white),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Icon(Icons.upload_sharp, color: KTealColor, size: 16),
@@ -108,8 +126,13 @@ class _RoomDetailState extends State<RoomDetail> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Container(
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(0.0, 1.0), //(x,y)
+                  blurRadius: 3.0,
+                ),
+              ], shape: BoxShape.circle, color: Colors.white),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Icon(Icons.favorite, color: KTealColor, size: 16),
@@ -181,134 +204,33 @@ class _RoomDetailState extends State<RoomDetail> {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: Colors.black)),
-                    height: 40,
-                    width: 80,
-                    child: Center(
-                      child: Text(
-                        "Show all",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, letterSpacing: 0.2),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
               child: Container(
+                height: 80,
                 child: Column(
-                  children: [
-                    Divider(color: Colors.grey),
-                    Text("Where you'll sleep"),
-                    Container(height: 40, width: 40)
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Divider(color: Colors.grey),
-                    Text('What this place offers'),
-                    Text('Lorem ipsum'),
-                    Text('Lorem ipsum'),
-                    Text('Lorem ipsum'),
-                    Text('Lorem ipsum'),
-                    Text('Lorem ipsum'),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(color: Colors.black)),
-                      height: 40,
-                      width: 80,
-                      child: Center(
-                        child: Text(
-                          "Show all",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, letterSpacing: 0.2),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Divider(color: Colors.grey),
-                    Text('Accessibility'),
-                    Text('Lorem ipsum'),
-                    Row(
-                      children: [
-                        Text('Lorem ipsum dolor sit amet.'),
-                        Container(
-                          height: 20,
-                          width: 20,
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text('Lorem ipsum dolor sit amet.'),
-                        Container(
-                          height: 20,
-                          width: 20,
-                        )
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(color: Colors.black)),
-                      height: 40,
-                      width: 80,
-                      child: Center(
-                        child: Text(
-                          "Show all",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, letterSpacing: 0.2),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Divider(color: Colors.grey),
-                    Text("Where you'll be"),
-                    Container(
-                      height: 80,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black)),
-                    ),
-                    Text('Mumbai , Maharasthra'),
                     Text(
-                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
-                        'tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.'),
-                    Text('Lorem ipsum')
+                      'Nature lodge balcony perfect for couple & work',
+                      style: TextStyle(
+                          color: KThemeColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            '★ 4.89 (257)',
+                            style: TextStyle(color: KTealColor),
+                          ),
+                          Text('Superhost - Mumbai, india',
+                              style: TextStyle(color: KTealColor)),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -316,52 +238,216 @@ class _RoomDetailState extends State<RoomDetail> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
-                height: 300,
+                height: 50,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text(
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt',
+                        style: themeSemiBold2),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 100,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text(
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+                        style: themeSemiBold),
+                    Text('Lorem ipsum dolor sit amet.', style: themeSemiBold2),
+                    Text(
+                        'lorem   \u2022   lorem   \u2022   lorem   \u2022   lorem',
+                        style: themeSemiBold2)
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 180,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text('Lorem ipsum', style: themeSemiBold2),
+                    Text(
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.',
+                        style: regularTheme),
+                    Text('Lorem ipsum dolor sit amet,', style: themeSemiBold2),
+                    Text('Lorem ipsum', style: regularTheme),
+                    Text('Lorem ipsum dolor sit amet.', style: themeSemiBold2)
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 230,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text(
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor'
+                        ' invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et '
+                        'accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata '
+                        'sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing '
+                        'elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, '
+                        'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea.',
+                        style: regularTheme),
+                    Text('Lorem ipsum',
+                        style: TextStyle(
+                            color: KThemeColor,
+                            fontSize: 12,
+                            decoration: TextDecoration.underline)),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 200,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text("Where you'll sleep", style: themeSemiBold),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 2.0),
+                              child: Container(
+                                width: double.infinity,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(FontAwesomeIcons.bed,
+                                        color: KTealColor),
+                                    Icon(Icons.king_bed_sharp,
+                                        color: KTealColor),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Text('Lorem ipsum', style: themeSemiBold2),
+                            Text('Lorem ipsum dolor sit amet,',
+                                style: regularTheme),
+                          ],
+                        ),
+                      ),
+                      height: 100,
+                      width: 170,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 200,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Divider(color: Colors.grey),
-                    Text('★ 4.89  \u2022  257 reviews'),
+                    Text('What this place offers', style: themeSemiBold),
+                    Text('Lorem ipsum', style: themeSemiBold2),
+                    Text('Lorem ipsum', style: themeSemiBold2),
+                    Text('Lorem ipsum', style: themeSemiBold2),
+                    Text('Lorem ipsum', style: themeSemiBold2),
+                    Text('Lorem ipsum', style: themeSemiBold2),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(color: Colors.black)),
+                      height: 40,
+                      width: 80,
+                      child: Center(
+                        child: Text(
+                          "Show all",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, letterSpacing: 0.2),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 200,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text('Accessibility', style: themeSemiBold),
+                    Text('Lorem ipsum', style: themeSemiBold2),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Text('Lorem ipsum dolor sit amet.',
+                            style: themeSemiBold2),
                         Container(
-                          height: 100,
-                          width: 90,
+                          height: 20,
+                          width: 20,
+                        ),
+                        Container(
+                          height: 25,
+                          width: 25,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all(color: Colors.grey)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              children: [
-                                ListTile(
-                                  title: Text('Hosted By Calvin'),
-                                  subtitle: Text('joined 2 mon ago'),
-                                  trailing: CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                        'assets/images/profile-placeholder.jpg'),
-                                  ),
-                                ),
-                                RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text:
-                                            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor '
-                                            'invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam '
-                                            'et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata ',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red)),
-                                    TextSpan(
-                                        text: ' Read more',
-                                        style: TextStyle(
-                                            fontStyle: FontStyle.italic,
-                                            color: Colors.purple)),
-                                  ]),
-                                ),
-                              ],
-                            ),
+                            image: DecorationImage(
+                                fit: BoxFit.fitWidth,
+                                image: AssetImage('assets/images/map.PNG')),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Lorem ipsum dolor sit amet.',
+                            style: themeSemiBold2),
+                        Container(
+                          height: 20,
+                          width: 20,
+                        ),
+                        Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.fitWidth,
+                                image: AssetImage('assets/images/map.PNG')),
                           ),
                         ),
                       ],
@@ -387,6 +473,130 @@ class _RoomDetailState extends State<RoomDetail> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
+                height: 380,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text("Where you'll be", style: themeSemiBold),
+                    Container(
+                      height: 200,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fitWidth,
+                              image: AssetImage('assets/images/map.PNG')),
+                          border: Border.all(color: Colors.black)),
+                    ),
+                    Text('Mumbai , Maharasthra', style: themeSemiBold2),
+                    Text(
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
+                        'tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.',
+                        style: regularTheme),
+                    Text('Lorem ipsum',
+                        style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: KThemeColor,
+                            fontSize: 12))
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 320,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Divider(color: Colors.grey),
+                    Text('★ 4.89  \u2022  257 reviews',
+                        style: TextStyle(color: KTealColor)),
+                    Expanded(
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: 4,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: 60,
+                              width: 250,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  border: Border.all(color: Colors.grey)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    ListTile(
+                                      contentPadding: EdgeInsets.zero,
+                                      title: Text('Lorem ipsum',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w500)),
+                                      subtitle: Text('1 week ago',
+                                          style: regularGrey),
+                                      leading: CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            'assets/images/profile-placeholder.jpg'),
+                                      ),
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                              text:
+                                                  'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor '
+                                                  'invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam '
+                                                  'et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata ',
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 10)),
+                                          TextSpan(
+                                              text: ' Read more..',
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  fontSize: 10)),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(color: Colors.black)),
+                      height: 40,
+                      width: double.infinity,
+                      child: Center(
+                        child: Text(
+                          "Show all",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, letterSpacing: 0.2),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
                 height: 900,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -394,8 +604,8 @@ class _RoomDetailState extends State<RoomDetail> {
                   children: [
                     Divider(color: Colors.grey),
                     ListTile(
-                      title: Text('Hosted By Calvin'),
-                      subtitle: Text('joined 2 mon ago'),
+                      title: Text('Hosted By Calvin', style: themeSemiBold),
+                      subtitle: Text('joined 2 mon ago', style: regularGrey),
                       trailing: CircleAvatar(
                         backgroundImage:
                             AssetImage('assets/images/profile-placeholder.jpg'),
@@ -403,23 +613,23 @@ class _RoomDetailState extends State<RoomDetail> {
                     ),
                     Row(
                       children: [
-                        Icon(Icons.star),
+                        Icon(Icons.star, color: KThemeColor),
                         SizedBox(width: 10),
-                        Text('252 reviews'),
+                        Text('252 reviews', style: themeSemiBold2),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.verified_user),
+                        Icon(Icons.verified_user, color: KThemeColor),
                         SizedBox(width: 10),
-                        Text('Identity verified'),
+                        Text('Identity verified', style: themeSemiBold2),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(FontAwesomeIcons.medal),
+                        Icon(FontAwesomeIcons.medal, color: KThemeColor),
                         SizedBox(width: 10),
-                        Text('252 reviews'),
+                        Text('252 reviews', style: themeSemiBold2),
                       ],
                     ),
                     Text(
@@ -427,21 +637,24 @@ class _RoomDetailState extends State<RoomDetail> {
                         'labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores '
                         'et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem '
                         'ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et'
-                        ' dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea.'),
+                        ' dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea.',
+                        style: regularGrey),
                     SizedBox(height: 10),
-                    Text('Lorem ipsum'),
+                    Text('Lorem ipsum', style: themeSemiBold2),
                     Text(
                         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut'
-                        ' labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet.'),
+                        ' labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet.',
+                        style: regularTheme),
                     SizedBox(height: 10),
-                    Text('Lorem ipsum'),
+                    Text('Lorem ipsum', style: themeSemiBold2),
                     Text(
                         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut'
-                        ' labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet.'),
+                        ' labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet.',
+                        style: regularTheme),
                     SizedBox(height: 10),
-                    Text('Languages : English , hindi'),
-                    Text('Response rate : 99%'),
-                    Text('Response time : within an hour'),
+                    Text('Languages : English , hindi', style: regularTheme),
+                    Text('Response rate : 99%', style: regularTheme),
+                    Text('Response time : within an hour', style: regularTheme),
                     SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
@@ -469,35 +682,42 @@ class _RoomDetailState extends State<RoomDetail> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ListTile(
-                    title: Text('Availability'),
+                    title: Text('Availability', style: themeSemiBold),
                     contentPadding: EdgeInsets.zero,
-                    subtitle: Text('19-21 Nov'),
+                    subtitle: Text('19-21 Nov', style: regularGrey),
                     trailing: Icon(Icons.arrow_forward),
                   ),
                   Divider(color: Colors.grey),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-                    title: Text('House Rules'),
-                    subtitle: Text('Check in: After 14:00'),
+                    title: Text('House Rules', style: themeSemiBold),
+                    subtitle: Text('Check in: After 14:00', style: regularGrey),
                     trailing: Icon(Icons.arrow_forward),
                   ),
                   Divider(color: Colors.grey),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Health & Safety'),
+                    title: Text('Health & Safety', style: themeSemiBold),
                     subtitle: Text(
-                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.'),
+                        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
+                        style: regularGrey),
                     trailing: Icon(Icons.arrow_forward),
                   ),
                   Divider(color: Colors.grey),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Cancellation Policy'),
-                    subtitle: Text('Free cancellation 48 hours'),
+                    title: Text('Cancellation Policy', style: themeSemiBold),
+                    subtitle:
+                        Text('Free cancellation 48 hours', style: regularGrey),
                     trailing: Icon(Icons.arrow_forward),
                   ),
                   Divider(color: Colors.grey),
-                  Text('Report'),
+                  SizedBox(height: 10),
+                  Text('Report',
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12,
+                          decoration: TextDecoration.underline)),
                   SizedBox(height: 60)
                 ],
               )),

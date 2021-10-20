@@ -25,7 +25,27 @@ class _ExploreState extends State<Explore> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(color: Colors.pink, height: 40, width: 500),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(Icons.arrow_back)),
+                        SizedBox(width: 15),
+                        Expanded(
+                          child: Text('Where are you going?',
+                              style: TextStyle(color: Colors.grey)),
+                        ),
+                        Icon(Icons.close)
+                      ],
+                    ),
+                    height: 40,
+                    width: 500),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text('GO ANYWHERE, ANYTIME', style: label),
