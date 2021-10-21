@@ -20,76 +20,76 @@ class _ExploreState extends State<Explore> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Icon(Icons.arrow_back)),
-                        SizedBox(width: 15),
-                        Expanded(
-                          child: Text('Where are you going?',
-                              style: TextStyle(color: Colors.grey)),
-                        ),
-                        Icon(Icons.close)
-                      ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(Icons.arrow_back)),
+                      SizedBox(width: 15),
+                      Expanded(
+                        child: Text('Where are you going?',
+                            style: TextStyle(color: Colors.grey)),
+                      ),
+                      Icon(Icons.close)
+                    ],
+                  ),
+                  height: 40,
+                  width: 500),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('GO ANYWHERE, ANYTIME', style: label),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GmapExplore()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Material(
+                  elevation: 4,
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
                     ),
                     height: 40,
-                    width: 500),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('GO ANYWHERE, ANYTIME', style: label),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => GmapExplore()));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Material(
-                    elevation: 4,
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      height: 40,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "I'm flexible",
-                            style: TextStyle(
-                                color: KThemeColor,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                letterSpacing: 0.2),
-                          ),
-                          Icon(Icons.arrow_forward_ios,
-                              color: KThemeColor, size: 17)
-                        ],
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          "I'm flexible",
+                          style: TextStyle(
+                              color: KThemeColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                              letterSpacing: 0.2),
+                        ),
+                        Icon(Icons.arrow_forward_ios,
+                            color: KThemeColor, size: 17)
+                      ],
                     ),
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('GETAWAYS NEAR YOU', style: label),
-              ),
-              ListView.builder(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('GETAWAYS NEAR YOU', style: label),
+            ),
+            Expanded(
+              child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: smallImages.length,
                 itemBuilder: (context, index) {
@@ -98,50 +98,53 @@ class _ExploreState extends State<Explore> {
                       Navigator.push(
                           context, SlideRightRoute(page: LookingFor()));
                     },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    image: DecorationImage(
-                                        image: NetworkImage(
-                                            '${smallImages[index]['Image']}'),
-                                        fit: BoxFit.cover)),
-                              ),
-                              SizedBox(width: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '${smallImages[index]['label']}',
-                                    style: ThemeColorBold2,
-                                  ),
-                                  SizedBox(height: 2),
-                                  Text(
-                                    '6 hr drive',
-                                    style: TealColorRegular,
-                                  )
-                                ],
-                              )
-                            ],
+                    child: Container(
+                      color: Colors.white,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              '${smallImages[index]['Image']}'),
+                                          fit: BoxFit.cover)),
+                                ),
+                                SizedBox(width: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '${smallImages[index]['label']}',
+                                      style: ThemeColorBold2,
+                                    ),
+                                    SizedBox(height: 2),
+                                    Text(
+                                      '6 hr drive',
+                                      style: TealColorRegular,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Divider(color: Colors.grey)
-                      ],
+                          Divider(color: Colors.grey)
+                        ],
+                      ),
                     ),
                   );
                 },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

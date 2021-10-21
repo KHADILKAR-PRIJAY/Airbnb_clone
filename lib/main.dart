@@ -1,4 +1,4 @@
-import 'package:airbnb_clone/screens/log_in.dart';
+import 'package:airbnb_clone/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: LogIn(),
+      home: SplashScreen(),
     );
   }
 }

@@ -11,6 +11,7 @@ class TextPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 height: 62,
@@ -45,6 +46,7 @@ class TextPage extends StatelessWidget {
               Column(
                 children: [
                   //Expanded(child: ChatMessageList()),
+                  Container(),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Container(
@@ -58,7 +60,7 @@ class TextPage extends StatelessWidget {
                                     decoration: InputDecoration(
                                         hintText: 'Write message here.....',
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
+                                            color: Colors.white, fontSize: 15),
                                         contentPadding: EdgeInsets.all(10),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none),

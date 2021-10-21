@@ -25,58 +25,67 @@ class _RoomDetailState extends State<RoomDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      bottomNavigationBar: Container(
-        height: 70,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border(
-            top: BorderSide(width: 1, color: Colors.grey),
+      bottomNavigationBar: Material(
+        elevation: 20,
+        child: Container(
+          height: 70,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border(
+              top: BorderSide(width: 1, color: Colors.grey),
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('₹ 2000/ night'),
-                  SizedBox(height: 10),
-                  Text(
-                    '19 NOV - 21 NOV',
-                    style: TextStyle(
-                        color: KTealColor,
-                        decoration: TextDecoration.underline,
-                        fontSize: 10),
-                  ),
-                ],
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => RequestPage()));
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: KThemeColor,
-                  ),
-                  height: 30,
-                  width: 80,
-                  child: Center(
-                    child: Text(
-                      "Reserve",
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Text('₹ 2000', style: themeSemiBold),
+                        Text('/ night', style: themeSemiBold2),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '19 NOV - 21 NOV',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 0.2,
+                          color: KTealColor,
+                          decoration: TextDecoration.underline,
                           fontSize: 10),
                     ),
-                  ),
+                  ],
                 ),
-              )
-            ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => RequestPage()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: KThemeColor,
+                    ),
+                    height: 30,
+                    width: 80,
+                    child: Center(
+                      child: Text(
+                        "Reserve",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.2,
+                            fontSize: 10),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -226,8 +235,15 @@ class _RoomDetailState extends State<RoomDetail> {
                             '★ 4.89 (257)',
                             style: TextStyle(color: KTealColor),
                           ),
-                          Text('Superhost - Mumbai, india',
-                              style: TextStyle(color: KTealColor)),
+                          Row(
+                            children: [
+                              Icon(FontAwesomeIcons.medal,
+                                  color: KTealColor, size: 13),
+                              SizedBox(width: 5),
+                              Text('Superhost - Mumbai, india',
+                                  style: TextStyle(color: KTealColor)),
+                            ],
+                          ),
                         ],
                       ),
                     )

@@ -41,25 +41,35 @@ class _GmapExploreState extends State<GmapExplore> {
                   color: Colors.white,
                 ),
                 height: 40,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(Icons.arrow_back_ios,
-                            size: 20, color: KThemeColor)),
-                    SizedBox(width: 10),
-                    Text(
-                      "Where are you going ?",
-                      style: TextStyle(
-                          color: KThemeColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13,
-                          letterSpacing: 0.2),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(Icons.arrow_back,
+                              size: 20, color: KThemeColor)),
+                      Text('mumbai', style: KThemeColorBold),
+                      SizedBox(width: 10),
+                      Text(
+                        "Weekend in Oct,No...",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            letterSpacing: 0.2),
+                      ),
+                      Container(
+                        color: Colors.grey,
+                        width: 1,
+                        height: double.infinity,
+                      ),
+                      Icon(Icons.segment_rounded),
+                    ],
+                  ),
                 ),
               ),
             ),

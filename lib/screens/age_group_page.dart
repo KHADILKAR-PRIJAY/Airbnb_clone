@@ -30,10 +30,7 @@ class AgeGroup extends StatelessWidget {
                     color: KThemeColor, decoration: TextDecoration.underline),
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AgeGroup()));
-                },
+                onTap: () {},
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
@@ -85,12 +82,14 @@ class AgeGroup extends StatelessWidget {
                     tag: 'title',
                     child: Container(
                       width: 230,
-                      child: Text('When will you be there ?',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 27,
-                              fontWeight: FontWeight.w500,
-                              decoration: TextDecoration.none)),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Text('When will you be there ?',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 27,
+                                fontWeight: FontWeight.w500)),
+                      ),
                     ),
                   ),
                 ),

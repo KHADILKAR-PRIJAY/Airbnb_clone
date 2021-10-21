@@ -78,13 +78,19 @@ class _LogInState extends State<LogIn> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Container(
-                      height: 40,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  height: 90,
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -95,35 +101,28 @@ class _LogInState extends State<LogIn> {
                             GestureDetector(
                                 child: Icon(Icons.keyboard_arrow_down_rounded),
                                 onTap: () {
-                                  _onPressedShowDialog();
+                                  //_onPressedShowDialog();
+                                  _onPressedShowBottomSheet();
                                 })
                           ],
                         ),
                       ),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(4),
-                              topLeft: Radius.circular(4))),
-                    ),
-                    Container(
-                      height: 47,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      Container(
+                          color: Colors.black,
+                          height: 1,
+                          width: double.infinity),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Phone Number',
+                              hintStyle: TextStyle(fontSize: 14),
                               isDense: true),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(4),
-                              bottomRight: Radius.circular(4))),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Padding(

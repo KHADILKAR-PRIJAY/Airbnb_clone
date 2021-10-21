@@ -1,5 +1,6 @@
 import 'package:airbnb_clone/constants.dart';
 import 'package:airbnb_clone/data/data.dart';
+import 'package:airbnb_clone/screens/Gmap_explore_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -49,30 +50,38 @@ class _TripsState extends State<Trips> {
                     left: 15,
                     right: 15,
                     top: 50,
-                    child: Material(
-                      elevation: 10,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        height: 40,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.search_sharp,
-                                size: 20, color: KThemeColor),
-                            SizedBox(width: 10),
-                            Text(
-                              "Where are you going ?",
-                              style: TextStyle(
-                                  color: KThemeColor,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 13,
-                                  letterSpacing: 0.2),
-                            ),
-                          ],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => GmapExplore()));
+                      },
+                      child: Material(
+                        elevation: 10,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                          ),
+                          height: 40,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.search_sharp,
+                                  size: 20, color: KThemeColor),
+                              SizedBox(width: 10),
+                              Text(
+                                "Where are you going ?",
+                                style: TextStyle(
+                                    color: KThemeColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 13,
+                                    letterSpacing: 0.2),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -84,9 +84,20 @@ class _RequestPageState extends State<RequestPage> {
                             SizedBox(height: 2),
                             Text('lorem   \u2022   lorem', style: regularTheme),
                             SizedBox(height: 2),
-                            Text('★ 4.89 (257) Superhost - Mumbai, india',
-                                style:
-                                    TextStyle(color: KTealColor, fontSize: 12))
+                            Row(
+                              children: [
+                                Text('★ 4.89 (257) ',
+                                    style: TextStyle(
+                                        color: KTealColor, fontSize: 12)),
+                                SizedBox(width: 10),
+                                Icon(FontAwesomeIcons.medal,
+                                    color: KTealColor, size: 10),
+                                SizedBox(width: 4),
+                                Text('Superhost - Mumbai, india',
+                                    style: TextStyle(
+                                        color: KTealColor, fontSize: 12))
+                              ],
+                            )
                           ],
                         ),
                       )
