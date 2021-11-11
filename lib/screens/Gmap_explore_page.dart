@@ -76,7 +76,7 @@ class _GmapExploreState extends State<GmapExplore> {
           ),
           Positioned.fill(
             child: DraggableScrollableSheet(
-              expand: true,
+              expand: false,
               initialChildSize: 0.5,
               minChildSize: 0.1,
               builder:

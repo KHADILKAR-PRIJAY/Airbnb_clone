@@ -29,47 +29,47 @@ class _WishListState extends State<WishList> {
               ),
               SizedBox(height: 20),
               ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RoomPreview()));
-                        },
-                        child: Container(
-                          color: Colors.transparent,
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 67,
-                                width: 69,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(9),
-                                  image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/hero2.jpg'),
-                                    fit: BoxFit.fitHeight,
-                                  ),
+                shrinkWrap: true,
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RoomPreview()));
+                      },
+                      child: Container(
+                        color: Colors.transparent,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 67,
+                              width: 69,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/hero2.jpg'),
+                                  fit: BoxFit.fitHeight,
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Mumbai',
-                                  style: KThemeColorBold,
-                                ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Mumbai',
+                                style: KThemeColorBold,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                    );
-                  })
+                    ),
+                  );
+                },
+              )
             ],
           ),
         ),

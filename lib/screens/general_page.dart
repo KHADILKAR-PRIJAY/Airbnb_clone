@@ -7,6 +7,8 @@ import 'package:airbnb_clone/screens/trips_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'demo/tripdemo.dart';
+
 class GeneralPage extends StatefulWidget {
   const GeneralPage({Key? key}) : super(key: key);
 
@@ -23,7 +25,7 @@ class _GeneralPageState extends State<GeneralPage> {
   }
 
   List<Widget> _pages() =>
-      <Widget>[Explore(), WishList(), Trips(), Inbox(), Profile()];
+      <Widget>[Explore(), WishList(), TripDemo(), Inbox(), Profile()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
