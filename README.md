@@ -4,11 +4,12 @@ A new Flutter project.
 
 ### Project Overview
 
-A list app which lets user to create list of item which is locally saved on their device with the help of Sqlite database. A item can also be deleted from the list permanently or with the help of delete all, list can be emptied.
+Functional front-end replica of Airbnb an online marketplace for rentals and tourism activities.
 
 ## Features
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- Integrated country-code picker package.
+- Made of reusable UI elements, keeping the theme consistent.
 
 
 ### Demo
